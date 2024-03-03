@@ -6,6 +6,7 @@ use App\Http\Controllers\ClinicsController;
 use App\Http\Controllers\DoctorController;
 use App\Http\Controllers\MainTestController;
 use App\Http\Controllers\PatientController;
+use App\Http\Controllers\X_rayController;
 use App\Models\Patients;
 use App\Models\Doctors;
 use Illuminate\Contracts\Cache\Store;
@@ -39,6 +40,11 @@ Route::get('/virologies/{id}/{patientId}', [MainTestController::class, 'getVirol
 Route::get('/parasitologies/{id}/{patientId}', [MainTestController::class, 'getParasitologiesById']);
 Route::post('/book_test', [MainTestController::class, 'bookTest']);
 
+
+
+Route::get('/x-ray', [X_rayController::class, 'index']);
+Route::get('/x-ray/{id}', [X_rayController::class, 'show']);
+Route::post('/book/x-ray', [X_rayController::class, 'book_X_ray']);
 
 
 

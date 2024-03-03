@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->string('photo');
+            $table->string('price');
             $table->unsignedBigInteger('ray_test_id')->nullable();
             $table->foreign('ray_test_id')->references('id')->on('ray_tests');
             $table->timestamps();

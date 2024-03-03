@@ -5,14 +5,17 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class X_Ray extends Model
+class book_X_ray extends Model
 {
     use HasFactory;
 
     protected $fillable = [
-        'name',
-        'photo',
+        'table_name',
+        'x_ray_name',
+        'x_ray_id',
         'price',
-        'ray_test_id'
+        'date',
+        'time',
+        'patient_id',
     ];
 }

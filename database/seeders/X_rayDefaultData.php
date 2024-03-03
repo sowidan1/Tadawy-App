@@ -17,36 +17,43 @@ class X_rayDefaultData extends Seeder
                 'name' => 'Brain CT Scan',
                 'photo' => 'images/Brain-CT.png',
                 'ray_test_id' => 1,
+                'price' => '200'
             ],
             [
                 'name' => 'Chest CT Scan',
                 'photo' => 'images/Chest-CT.png',
                 'ray_test_id' => 1,
+                'price' => '320'
             ],
             [
                 'name' => 'Sinuses CT Scan',
                 'photo' => 'images/CT-Sinuses.png',
                 'ray_test_id' => 1,
+                'price' => '230'
             ],
             [
                 'name' => 'CB CT Scan',
                 'photo' => 'images/CB-CT.png',
                 'ray_test_id' => 1,
+                'price' => '320'
             ],
             [
                 'name' => 'Abdominal and Pelvic CT scan',
                 'photo' => 'images/Abdominal-and-Pelvic-CT.png',
                 'ray_test_id' => 1,
+                'price' => '900'
             ],
             [
                 'name' => 'Liver CT scan',
                 'photo' => 'images/Liver-CT.png',
                 'ray_test_id' => 1,
+                'price' => '900'
             ],
             [
                 'name' => 'Ear CT scan',
                 'photo' => 'images/Ear-CT.png',
                 'ray_test_id' => 1,
+                'price' => '230'
             ]
         ];
 

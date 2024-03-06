@@ -13,11 +13,6 @@ class DefaultData extends Seeder
      */
     public function run(): void
     {
-        $data['name']='osama mohamed';
-        $data['password']=bcrypt('12345');
-        $data['email']='admin@admin.com';
-
-
-        Admins::create($data);
+        
     }
 }

@@ -4,6 +4,7 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\ClinicsController;
 use App\Http\Controllers\DoctorController;
+use App\Http\Controllers\FitnessController;
 use App\Http\Controllers\MainTestController;
 use App\Http\Controllers\PatientController;
 use App\Http\Controllers\X_rayController;
@@ -41,14 +42,15 @@ Route::get('/parasitologies/{id}/{patientId}', [MainTestController::class, 'getP
 Route::post('/book_test', [MainTestController::class, 'bookTest']);
 
 
-
+//! X-ray routes
 Route::get('/x-ray', [X_rayController::class, 'index']);
 Route::get('/x-ray/{id}', [X_rayController::class, 'show']);
 Route::post('/book/x-ray', [X_rayController::class, 'book_X_ray']);
 
 
-
-
+//! Fitness routes
+Route::get('/fitness/all', [FitnessController::class, 'index']);
+Route::get('/fitness/{fitnessId}', [FitnessController::class, 'byFitnessId']);
 
 //! clinics routes
 Route::get('/clinics/all', [ClinicsController::class, 'index']);

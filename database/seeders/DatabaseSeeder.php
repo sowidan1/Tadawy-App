@@ -22,7 +22,6 @@ class DatabaseSeeder extends Seeder
             MainTestDefaultData::class,
             Blood_glucosesDefaultData::class,
             cardiac_profileDefaultData::class,
-            ClinicsDefaultData::class,
             HaematologyDefaultData::class,
             lipid_profilesDefaultData::class,
             liver_profileDefaultData::class,
@@ -30,7 +29,9 @@ class DatabaseSeeder extends Seeder
             renal_profilesDefaultData::class,
             virologyDefaultData::class,
             X_rayDefaultData::class,
-
+            FitnessDefaultData::class,
+            Fitness_showDefaultData::class,
+            
         ]);
     }
 }

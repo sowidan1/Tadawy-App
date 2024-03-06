@@ -64,11 +64,7 @@ class ClinicsDefaultData extends Seeder
         ];
 
         foreach ($clinicsData as $data) {
-            Clinics::create([
-                 'name' => $data['name'],
-                 'photo' => 'images/' . $data['photo'],
-                 'description' => $data['description']
-            ]);
+            \App\Models\Clinics::create($data);
         }
     }
 }

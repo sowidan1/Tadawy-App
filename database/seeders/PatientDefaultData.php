@@ -20,8 +20,9 @@ class PatientDefaultData extends Seeder
         'phone'=> '01014567890',
         'date_of_birth' => '1990-01-01',
         'gender'=>'female',
-        'password'=> bcrypt('123456'),
+        'password'=> bcrypt('hana1234'),
         'email'=> 'hana@patient.com',
+        'photo'=> 'images/patient.png'
         ]);
     }
 }

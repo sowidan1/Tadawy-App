@@ -32,7 +32,7 @@ class DatabaseSeeder extends Seeder
             FitnessDefaultData::class,
             Fitness_showDefaultData::class,
             Fitness_programDefaultData::class,
-            
+            Fitness_programDetailsDefaultData::class,
 
         ]);
     }

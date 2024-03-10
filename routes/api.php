@@ -52,6 +52,9 @@ Route::post('/book/x-ray', [X_rayController::class, 'book_X_ray']);
 Route::get('/fitness/all', [FitnessController::class, 'index']);
 Route::get('/fitness/{fitnessId}', [FitnessController::class, 'byFitnessId']);
 
+Route::get('/fitness-program/all', [FitnessController::class, 'index_program']);
+Route::get('/fitness-program/{fitnessId}', [FitnessController::class, 'byFitnessDetailsId']);
+
 //! clinics routes
 Route::get('/clinics/all', [ClinicsController::class, 'index']);
 Route::get('/clinics/{clinicId}', [ClinicsController::class, 'getClinicDetails']);

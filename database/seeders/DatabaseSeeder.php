@@ -31,7 +31,9 @@ class DatabaseSeeder extends Seeder
             X_rayDefaultData::class,
             FitnessDefaultData::class,
             Fitness_showDefaultData::class,
+            Fitness_programDefaultData::class,
             
+
         ]);
     }
 }

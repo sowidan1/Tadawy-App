@@ -18,6 +18,11 @@ use Illuminate\Support\Facades\DB;
 
 class MainTestController extends Controller
 {
+
+    public function __construct() {
+        $this->middleware('permission:bookTest')->only('bookTest');
+    }
+
     public function show($id)
 {
     $mainTest = Main_test::with('haematologies', 'blood_glucoses', 'lipid_profiles', 'renal_profiles', 'liver_profiles', 'cardiac_profiles', 'virologies', 'parasitologies')

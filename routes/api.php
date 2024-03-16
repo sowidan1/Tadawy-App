@@ -15,7 +15,11 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
 
-
+Route::middleware('auth:patientApi')->group(function(){
+    Route::post('/book_test', [MainTestController::class, 'bookTest']);
+    Route::post('/book/x-ray', [X_rayController::class, 'book_X_ray']);
+    Route::get('/getProfile', [PatientController::class, 'getProfile']);
+});
 
 //! public routes
 Route::post('/doctor-login',[DoctorController::class,'doctor_login']);
@@ -25,6 +29,7 @@ Route::post('/patient-login',[PatientController::class,'patient_login']);
 //! private routes
 Route::group(['middleware'=>['auth:sanctum']],function(){
     Route::post('/logout', [AuthController::class, 'logout']);
+
 });
 
 //! test routes
@@ -39,13 +44,13 @@ Route::get('/liver_profiles/{id}/{patientId}', [MainTestController::class, 'getL
 Route::get('/cardiac_profiles/{id}/{patientId}', [MainTestController::class, 'getCardiac_profilesById']);
 Route::get('/virologies/{id}/{patientId}', [MainTestController::class, 'getVirologiesById']);
 Route::get('/parasitologies/{id}/{patientId}', [MainTestController::class, 'getParasitologiesById']);
-Route::post('/book_test', [MainTestController::class, 'bookTest']);
+// Route::post('/book_test', [MainTestController::class, 'bookTest']);
 
 
 //! X-ray routes
 Route::get('/x-ray', [X_rayController::class, 'index']);
 Route::get('/x-ray/{id}', [X_rayController::class, 'show']);
-Route::post('/book/x-ray', [X_rayController::class, 'book_X_ray']);
+// Route::post('/book/x-ray', [X_rayController::class, 'book_X_ray']);
 
 
 //! Fitness routes

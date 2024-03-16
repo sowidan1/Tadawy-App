@@ -5,6 +5,8 @@ namespace Database\Seeders;
 use App\Models\Patients;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use Spatie\Permission\Models\Permission;
+use Spatie\Permission\Models\Role;
 
 class PatientDefaultData extends Seeder
 {
@@ -13,7 +15,32 @@ class PatientDefaultData extends Seeder
      */
     public function run(): void
     {
-        Patients::create([
+
+        $patientPermissions = [
+            'bookTest',
+            'book_X_ray',
+            'getProfile',
+
+        ];
+
+        foreach ($patientPermissions as $permission) {
+            Permission::Create( [
+                'name' => $permission,
+                'guard_name' => 'patientApi',
+            ]);
+        }
+
+        $patientRole = Role::create([
+            'name' => 'patient',
+            'guard_name' => 'patientApi',
+        ]);
+
+        $patientRole->givePermissionTo($patientPermissions);
+
+
+
+
+        $patient = Patients::create([
         'medical_history' => 'No medical history',
         'emergency_contact'=> 'No emergency contact',
         'name'=> 'hana tarek',
@@ -24,5 +51,10 @@ class PatientDefaultData extends Seeder
         'email'=> 'hana@patient.com',
         'photo'=> 'images/patient.png'
         ]);
+
+        $patientRole = Role::where('name','patient')->first();
+        if($patientRole){
+            $patient->assignRole($patientRole);
+        }
     }
 }

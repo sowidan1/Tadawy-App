@@ -5,6 +5,8 @@ namespace Database\Seeders;
 use App\Models\Doctors;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use Spatie\Permission\Models\Permission;
+use Spatie\Permission\Models\Role;
 
 class DoctorDefaultData extends Seeder
 {
@@ -13,18 +15,25 @@ class DoctorDefaultData extends Seeder
      */
     public function run()
     {
-        /*
-        'name',
-        'password',
-        'email',
-        'specialty',
-        'year_of_experience',
-        'phone',
-        'date_of_birth',
-        'gender',
-        'photo',
-        'clinic_id'
-         */
+
+        $doctorPermissions = [
+            
+        ];
+
+        foreach ($doctorPermissions as $permission) {
+            Permission::Create( [
+                'name' => $permission,
+                'guard_name' => 'doctorApi',
+            ]);
+        }
+
+        $doctorRole = Role::create([
+            'name' => 'doctor',
+            'guard_name' => 'doctorApi',
+        ]);
+
+        $doctorRole->givePermissionTo($doctorPermissions);
+
 
         $DoctorsData = [
             [
@@ -638,7 +647,12 @@ class DoctorDefaultData extends Seeder
 
         foreach ($DoctorsData as $data) {
 
-            \App\Models\Doctors::create($data);
+            $Doctor=Doctors::create($data);
+
+            $doctortRole = Role::where('name','patient')->first();
+            if($doctortRole){
+            $Doctor->assignRole($doctortRole);
+        }
         }
 
     }

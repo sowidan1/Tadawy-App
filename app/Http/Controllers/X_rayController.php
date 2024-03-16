@@ -9,6 +9,10 @@ use Illuminate\Http\Request;
 
 class X_rayController extends Controller
 {
+
+    public function __construct() {
+        $this->middleware('permission:book_X_ray')->only('book_X_ray');
+    }
     public function index()
 {
         return X_Ray::all();

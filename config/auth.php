@@ -44,6 +44,22 @@ return [
             'driver' => 'session',
             'provider' => 'admins',
         ],
+
+        'adminApi' => [
+            'driver' => 'sanctum',
+            'provider' => 'admins',
+        ],
+
+        'doctorApi' => [
+            'driver' => 'sanctum',
+            'provider' => 'doctors',
+        ],
+
+        'patientApi' => [
+            'driver' => 'sanctum',
+            'provider' => 'patients',
+        ],
+
     ],
 
     /*
@@ -72,7 +88,17 @@ return [
         'admins' => [
             'driver' => 'eloquent',
             'model' => App\Models\Admins::class,
-        ]
+        ],
+
+        'doctors' => [
+            'driver' => 'eloquent',
+            'model' => App\Models\Doctors::class,
+        ],
+
+        'patients' => [
+            'driver' => 'eloquent',
+            'model' => App\Models\Patients::class,
+        ],
     ],
 
     /*

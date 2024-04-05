@@ -43,13 +43,13 @@ class PatientDefaultData extends Seeder
         $patient = Patients::create([
         'medical_history' => 'No medical history',
         'emergency_contact'=> 'No emergency contact',
-        'name'=> 'hana tarek',
+        'name'=> 'Hana Tarek',
         'phone'=> '01014567890',
         'date_of_birth' => '1990-01-01',
         'gender'=>'female',
         'password'=> bcrypt('hana1234'),
         'email'=> 'hana@patient.com',
-        'photo'=> 'images/patient.png'
+        'photo'=> 'images/woman.png'
         ]);
 
         $patientRole = Role::where('name','patient')->first();

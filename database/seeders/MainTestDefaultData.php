@@ -22,7 +22,7 @@ class MainTestDefaultData extends Seeder
             ],
             [
                 'name' => 'Lipid Profile',
-                'photo'=> 'images/Lipid.png',
+                'photo'=> 'images/lipid.png',
                 'ray_test_id' => '2'
             ],
             [
